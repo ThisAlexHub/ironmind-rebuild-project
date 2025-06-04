@@ -1,12 +1,44 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import { useEffect } from 'react';
+import HeroSection from '@/components/HeroSection';
+import WhatIronMindIs from '@/components/WhatIronMindIs';
+import WhyNotTherapy from '@/components/WhyNotTherapy';
+import TestimonialsSection from '@/components/TestimonialsSection';
+import EmailSignup from '@/components/EmailSignup';
+import AboutSection from '@/components/AboutSection';
+import FAQSection from '@/components/FAQSection';
 
 const Index = () => {
+  useEffect(() => {
+    // Add scroll animation trigger
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, {
+      threshold: 0.1,
+    });
+
+    // Observe all elements with section-fade-in class
+    const elements = document.querySelectorAll('.section-fade-in, .text-slide-in');
+    elements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen">
+      <HeroSection />
+      <WhatIronMindIs />
+      <WhyNotTherapy />
+      <TestimonialsSection />
+      <EmailSignup />
+      <AboutSection />
+      <FAQSection />
     </div>
   );
 };
