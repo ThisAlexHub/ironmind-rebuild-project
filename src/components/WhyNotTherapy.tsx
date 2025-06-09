@@ -1,3 +1,4 @@
+
 import { useEffect, useRef, useState } from 'react';
 
 const WhyNotTherapy = () => {
@@ -45,10 +46,10 @@ const WhyNotTherapy = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="py-20 bg-white">
+    <section ref={sectionRef} className="py-20 bg-black">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className={`font-oswald text-4xl md:text-6xl font-bold text-steel-navy mb-6 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
+          <h2 className={`font-oswald text-4xl md:text-6xl font-bold text-white mb-6 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
             Why It's Not Therapy
           </h2>
         </div>
@@ -57,17 +58,17 @@ const WhyNotTherapy = () => {
           {statements.map((statement, index) => (
             <div
               key={index}
-              className={`grid md:grid-cols-2 gap-8 py-8 border-b border-steel-gunmetal/20 last:border-b-0 ${isVisible ? 'animate-slide-in-left' : 'opacity-0'}`}
+              className={`grid md:grid-cols-2 gap-8 py-8 border-b border-gray-800 last:border-b-0 ${isVisible ? 'animate-slide-in-left' : 'opacity-0'}`}
               style={{animationDelay: statement.delay}}
             >
               <div className="text-right md:pr-8">
-                <h3 className="font-oswald text-2xl md:text-3xl font-medium text-steel-gunmetal italic">
+                <h3 className="font-oswald text-2xl md:text-3xl font-medium text-gray-300 italic">
                   "{statement.question}"
                 </h3>
               </div>
               
-              <div className="md:pl-8 md:border-l-2 md:border-steel-orange">
-                <p className="font-oswald text-2xl md:text-3xl font-bold text-steel-orange">
+              <div className="md:pl-8 md:border-l-2 md:border-red-600">
+                <p className="font-oswald text-2xl md:text-3xl font-bold text-red-500">
                   {statement.answer}
                 </p>
               </div>
@@ -76,9 +77,9 @@ const WhyNotTherapy = () => {
         </div>
         
         <div className={`text-center mt-16 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{animationDelay: '0.8s'}}>
-          <p className="text-xl text-steel-gunmetal font-inter max-w-2xl mx-auto">
-            Therapy asks <span className="text-steel-navy font-semibold">"How do you feel?"</span><br/>
-            IronMind asks <span className="text-steel-orange font-semibold">"What are you going to do about it?"</span>
+          <p className="text-xl text-gray-400 font-inter max-w-2xl mx-auto">
+            Therapy asks <span className="text-white font-semibold">"How do you feel?"</span><br/>
+            IronMind asks <span className="text-red-500 font-semibold">"What are you going to do about it?"</span>
           </p>
         </div>
       </div>

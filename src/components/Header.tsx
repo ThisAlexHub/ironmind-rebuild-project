@@ -13,11 +13,11 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-steel-navy/90 backdrop-blur-sm border-b border-steel-gunmetal">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-sm border-b border-gray-800">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <div className="font-oswald text-2xl font-bold text-white">
-            Iron<span className="text-steel-orange">Mind</span>
+            Iron<span className="text-red-500">Mind</span>
           </div>
           
           {/* Desktop Navigation */}
@@ -26,7 +26,7 @@ const Header = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-steel-light hover:text-steel-orange transition-colors font-inter"
+                className="text-gray-300 hover:text-red-400 transition-colors font-inter"
               >
                 {item.name}
               </a>
@@ -44,12 +44,12 @@ const Header = () => {
         
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <nav className="md:hidden py-4 border-t border-steel-gunmetal">
+          <nav className="md:hidden py-4 border-t border-gray-800">
             {navigation.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className="block py-2 text-steel-light hover:text-steel-orange transition-colors font-inter"
+                className="block py-2 text-gray-300 hover:text-red-400 transition-colors font-inter"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.name}

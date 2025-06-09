@@ -1,3 +1,4 @@
+
 import { useEffect, useRef, useState } from 'react';
 import { Brain, Users, Shield, TrendingUp } from 'lucide-react';
 
@@ -50,7 +51,7 @@ const WhyItWorksSection = () => {
   ];
 
   return (
-    <section ref={sectionRef} id="how-it-works" className="py-20 bg-steel-gunmetal">
+    <section ref={sectionRef} id="how-it-works" className="py-20 bg-gray-900">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className={`font-oswald text-4xl md:text-6xl font-bold text-white mb-6 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
@@ -62,11 +63,11 @@ const WhyItWorksSection = () => {
           {reasons.map((reason, index) => (
             <div
               key={index}
-              className={`flex items-start space-x-6 p-8 bg-steel-navy/50 rounded-lg border border-steel-gunmetal hover:border-steel-orange/50 transition-all duration-300 ${isVisible ? 'animate-slide-in-right' : 'opacity-0'}`}
+              className={`flex items-start space-x-6 p-8 bg-black/50 rounded-lg border border-gray-800 hover:border-red-600/50 transition-all duration-300 ${isVisible ? 'animate-slide-in-right' : 'opacity-0'}`}
               style={{animationDelay: reason.delay}}
             >
               <div className="flex-shrink-0">
-                <div className="w-16 h-16 bg-gradient-to-br from-steel-orange to-steel-red rounded-lg flex items-center justify-center">
+                <div className="w-16 h-16 bg-gradient-to-br from-red-600 to-red-800 rounded-lg flex items-center justify-center">
                   <reason.icon className="w-8 h-8 text-white" />
                 </div>
               </div>
@@ -75,7 +76,7 @@ const WhyItWorksSection = () => {
                 <h3 className="font-oswald text-2xl font-bold text-white mb-4">
                   {reason.title}
                 </h3>
-                <p className="text-steel-light font-inter text-lg leading-relaxed">
+                <p className="text-gray-300 font-inter text-lg leading-relaxed">
                   {reason.description}
                 </p>
               </div>
@@ -84,7 +85,7 @@ const WhyItWorksSection = () => {
         </div>
         
         <div className={`text-center ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{animationDelay: '0.8s'}}>
-          <div className="text-2xl md:text-3xl font-oswald font-bold text-steel-orange mb-2">
+          <div className="text-2xl md:text-3xl font-oswald font-bold text-red-500 mb-2">
             Built for men. Built to help.
           </div>
           <div className="text-xl text-white font-oswald">

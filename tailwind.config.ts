@@ -67,12 +67,10 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				steel: {
-					light: 'hsl(var(--steel-light))',
-					navy: 'hsl(var(--steel-navy))',
-					gunmetal: 'hsl(var(--steel-gunmetal))',
-					orange: 'hsl(var(--steel-orange))',
-					red: 'hsl(var(--steel-red))'
+				iron: {
+					red: 'hsl(var(--iron-red))',
+					gray: 'hsl(var(--iron-gray))',
+					dark: 'hsl(var(--iron-dark))'
 				}
 			},
 			borderRadius: {
