@@ -24,7 +24,7 @@ const EmailSignup = () => {
   ];
 
   return (
-    <section className="py-16 bg-red-600">
+    <section className="py-16 bg-steel-orange">
       <div className="container mx-auto px-4">
         <div className="text-center">
           <h2 className="font-oswald text-3xl md:text-5xl font-bold text-white mb-4">
@@ -37,12 +37,12 @@ const EmailSignup = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter your email"
-              className="flex-1 px-6 py-4 bg-white text-black rounded-lg focus:outline-none focus:ring-2 focus:ring-white"
+              className="flex-1 px-6 py-4 bg-white text-steel-navy rounded-lg focus:outline-none focus:ring-2 focus:ring-white"
               required
             />
             <button
               type="submit"
-              className="bg-black hover:bg-gray-800 text-white font-bold py-4 px-8 rounded-lg transition-colors font-oswald text-lg"
+              className="bg-steel-navy hover:bg-steel-gunmetal text-white font-bold py-4 px-8 rounded-lg transition-colors font-oswald text-lg"
             >
               ⚔️ Sign Up
             </button>

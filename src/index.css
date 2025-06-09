@@ -5,40 +5,41 @@
 
 @layer base {
   :root {
-    --background: 135 15% 91%; /* Soft Moss Green #E5EDE3 */
-    --foreground: 150 40% 12%; /* Deep Forest Green #1E3D32 */
+    --background: 214 20% 96%; /* Light Steel Gray #F4F6F8 */
+    --foreground: 207 50% 18%; /* Deep Navy Blue #1A2C42 */
 
-    --card: 135 15% 89%;
-    --card-foreground: 150 40% 12%;
+    --card: 214 20% 94%;
+    --card-foreground: 207 50% 18%;
 
-    --popover: 135 15% 89%;
-    --popover-foreground: 150 40% 12%;
+    --popover: 214 20% 94%;
+    --popover-foreground: 207 50% 18%;
 
-    --primary: 150 40% 12%; /* Deep Forest Green */
-    --primary-foreground: 135 15% 91%;
+    --primary: 207 50% 18%; /* Deep Navy Blue */
+    --primary-foreground: 214 20% 96%;
 
-    --secondary: 213 11% 25%; /* Slate Gray #3A3F47 */
-    --secondary-foreground: 135 15% 91%;
+    --secondary: 205 8% 31%; /* Gunmetal Gray #4A4F55 */
+    --secondary-foreground: 214 20% 96%;
 
-    --muted: 213 11% 25%;
-    --muted-foreground: 150 40% 12%;
+    --muted: 205 8% 31%;
+    --muted-foreground: 207 50% 18%;
 
-    --accent: 213 11% 25%;
-    --accent-foreground: 135 15% 91%;
+    --accent: 205 8% 31%;
+    --accent-foreground: 214 20% 96%;
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 135 15% 91%;
+    --destructive: 9 74% 48%; /* Safety Red #C0392B */
+    --destructive-foreground: 214 20% 96%;
 
-    --border: 213 11% 25%;
-    --input: 213 11% 25%;
-    --ring: 150 40% 12%;
+    --border: 205 8% 31%;
+    --input: 205 8% 31%;
+    --ring: 207 50% 18%;
 
     --radius: 0.5rem;
 
-    --iron-gold: 40 79% 43%; /* Rustic Gold #C68A17 */
-    --iron-forest: 150 40% 12%; /* Deep Forest Green */
-    --iron-slate: 213 11% 25%; /* Slate Gray */
-    --iron-moss: 135 15% 91%; /* Soft Moss Green */
+    --steel-light: 214 20% 96%; /* Light Steel Gray */
+    --steel-navy: 207 50% 18%; /* Deep Navy Blue */
+    --steel-gunmetal: 205 8% 31%; /* Gunmetal Gray */
+    --steel-orange: 19 100% 42%; /* Burnt Orange #D35400 */
+    --steel-red: 9 74% 48%; /* Safety Red #C0392B */
   }
 }
 
@@ -53,7 +54,7 @@
 
   body {
     @apply bg-background text-foreground font-inter;
-    background: linear-gradient(135deg, hsl(135, 15%, 91%) 0%, hsl(135, 15%, 89%) 100%);
+    background: linear-gradient(135deg, hsl(214, 20%, 96%) 0%, hsl(214, 20%, 94%) 100%);
     min-height: 100vh;
   }
 
@@ -68,7 +69,7 @@
 
 @layer components {
   .hero-gradient {
-    background: linear-gradient(135deg, hsl(135, 15%, 91%) 0%, hsl(135, 15%, 89%) 100%);
+    background: linear-gradient(135deg, hsl(214, 20%, 96%) 0%, hsl(214, 20%, 94%) 100%);
   }
 
   .section-fade-in {
@@ -94,23 +95,23 @@
   }
 
   .iron-button {
-    @apply bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-4 px-8 transition-all duration-300 transform hover:scale-105 hover:shadow-lg;
-    background: linear-gradient(135deg, #C68A17 0%, #A67214 100%);
-    box-shadow: 0 4px 15px rgba(198, 138, 23, 0.3);
+    @apply bg-steel-orange hover:bg-steel-red text-white font-bold py-4 px-8 transition-all duration-300 transform hover:scale-105 hover:shadow-lg;
+    background: linear-gradient(135deg, #D35400 0%, #C0392B 100%);
+    box-shadow: 0 4px 15px rgba(211, 84, 0, 0.3);
   }
 
   .iron-button:hover {
-    box-shadow: 0 6px 25px rgba(198, 138, 23, 0.5);
+    box-shadow: 0 6px 25px rgba(211, 84, 0, 0.5);
   }
 
   .testimonial-card {
-    @apply bg-slate-100 backdrop-blur-sm border border-slate-300 p-6 rounded-lg;
+    @apply bg-white backdrop-blur-sm border border-steel-gunmetal/20 p-6 rounded-lg;
     transition: all 0.3s ease;
   }
 
   .testimonial-card:hover {
-    @apply border-yellow-600/50 transform scale-105;
-    box-shadow: 0 10px 30px rgba(198, 138, 23, 0.2);
+    @apply border-steel-orange/50 transform scale-105;
+    box-shadow: 0 10px 30px rgba(211, 84, 0, 0.2);
   }
 }
 

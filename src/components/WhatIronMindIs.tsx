@@ -1,4 +1,3 @@
-
 import { useEffect, useRef, useState } from 'react';
 import { Brain, Target, Shield, Zap } from 'lucide-react';
 
@@ -51,13 +50,13 @@ const WhatIronMindIs = () => {
   ];
 
   return (
-    <section ref={sectionRef} className="py-20 bg-gradient-to-b from-slate-100 to-white">
+    <section ref={sectionRef} className="py-20 bg-gradient-to-b from-steel-light to-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className={`font-oswald text-4xl md:text-6xl font-bold text-green-900 mb-6 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
+          <h2 className={`font-oswald text-4xl md:text-6xl font-bold text-steel-navy mb-6 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
             What IronMind Is
           </h2>
-          <p className={`text-xl text-slate-700 max-w-3xl mx-auto font-inter ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{animationDelay: '0.2s'}}>
+          <p className={`text-xl text-steel-gunmetal max-w-3xl mx-auto font-inter ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{animationDelay: '0.2s'}}>
             This isn't for venting. This is for evolving. IronMind's AI coach gives you fire-tested clarity — not hugs, not pity, not filler.
           </p>
         </div>
@@ -70,17 +69,17 @@ const WhatIronMindIs = () => {
               style={{animationDelay: pillar.delay}}
             >
               <div className="relative mb-6">
-                <div className="w-20 h-20 mx-auto bg-gradient-to-br from-yellow-600 to-yellow-700 rounded-lg flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
+                <div className="w-20 h-20 mx-auto bg-gradient-to-br from-steel-orange to-steel-red rounded-lg flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
                   <pillar.icon className="w-10 h-10 text-white" />
                 </div>
-                <div className="absolute inset-0 w-20 h-20 mx-auto bg-yellow-600 rounded-lg opacity-30 blur-xl group-hover:opacity-50 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 w-20 h-20 mx-auto bg-steel-orange rounded-lg opacity-30 blur-xl group-hover:opacity-50 transition-opacity duration-300"></div>
               </div>
               
-              <h3 className="font-oswald text-xl font-bold text-green-900 mb-3 group-hover:text-yellow-600 transition-colors">
+              <h3 className="font-oswald text-xl font-bold text-steel-navy mb-3 group-hover:text-steel-orange transition-colors">
                 {pillar.title}
               </h3>
               
-              <p className="text-slate-600 font-inter leading-relaxed">
+              <p className="text-steel-gunmetal font-inter leading-relaxed">
                 {pillar.description}
               </p>
             </div>

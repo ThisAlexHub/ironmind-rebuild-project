@@ -27,11 +27,11 @@ const EmailCaptureModal = ({ isOpen, onClose }: EmailCaptureModalProps) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm">
-      <div className="bg-gray-900 border border-red-600/30 rounded-lg p-8 max-w-md w-full mx-4 relative animate-scale-in">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-steel-navy/70 backdrop-blur-sm">
+      <div className="bg-steel-gunmetal border border-steel-orange/30 rounded-lg p-8 max-w-md w-full mx-4 relative animate-scale-in">
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-gray-400 hover:text-white"
+          className="absolute top-4 right-4 text-steel-light hover:text-white"
         >
           <X className="w-6 h-6" />
         </button>
@@ -40,11 +40,11 @@ const EmailCaptureModal = ({ isOpen, onClose }: EmailCaptureModalProps) => {
           <h3 className="font-oswald text-2xl font-bold text-white mb-2">
             Get Early Access
           </h3>
-          <div className="text-red-400 font-bold text-lg mb-2">
+          <div className="text-steel-orange font-bold text-lg mb-2">
             50% OFF — Just $4.99/month
           </div>
-          <div className="text-gray-400 line-through">Normally $9.99</div>
-          <p className="text-gray-300 mt-4 font-inter">
+          <div className="text-steel-light line-through">Normally $9.99</div>
+          <p className="text-steel-light mt-4 font-inter">
             Be the first to use it. Limited time only.
           </p>
         </div>
@@ -55,7 +55,7 @@ const EmailCaptureModal = ({ isOpen, onClose }: EmailCaptureModalProps) => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Enter your email"
-            className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-red-500 transition-colors"
+            className="w-full px-4 py-3 bg-steel-navy border border-steel-gunmetal rounded-lg text-white placeholder-steel-light focus:outline-none focus:border-steel-orange transition-colors"
             required
           />
           <button

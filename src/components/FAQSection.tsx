@@ -29,7 +29,7 @@ const FAQSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-gray-900">
+    <section className="py-20 bg-steel-gunmetal">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="font-oswald text-4xl md:text-6xl font-bold text-white mb-6">
@@ -39,16 +39,16 @@ const FAQSection = () => {
         
         <div className="max-w-3xl mx-auto space-y-4">
           {faqs.map((faq, index) => (
-            <div key={index} className="bg-black border border-gray-800 rounded-lg overflow-hidden">
+            <div key={index} className="bg-steel-navy border border-steel-gunmetal rounded-lg overflow-hidden">
               <button
                 onClick={() => setOpenFAQ(openFAQ === index ? null : index)}
-                className="w-full px-6 py-6 text-left flex justify-between items-center hover:bg-gray-800 transition-colors"
+                className="w-full px-6 py-6 text-left flex justify-between items-center hover:bg-steel-gunmetal transition-colors"
               >
                 <h3 className="font-oswald text-xl font-medium text-white">
                   {faq.question}
                 </h3>
                 <ChevronDown 
-                  className={`w-6 h-6 text-red-500 transition-transform ${
+                  className={`w-6 h-6 text-steel-orange transition-transform ${
                     openFAQ === index ? 'rotate-180' : ''
                   }`} 
                 />
@@ -56,7 +56,7 @@ const FAQSection = () => {
               
               {openFAQ === index && (
                 <div className="px-6 pb-6">
-                  <p className="text-gray-300 font-inter text-lg">
+                  <p className="text-steel-light font-inter text-lg">
                     {faq.answer}
                   </p>
                 </div>
