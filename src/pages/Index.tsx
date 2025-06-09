@@ -39,13 +39,17 @@ const Index = () => {
     <div className="min-h-screen">
       <Header />
       <HeroSection />
-      <WhatIronMindIs />
+      <div id="how-it-works">
+        <WhatIronMindIs />
+      </div>
       <WhyNotTherapy />
       <PremiumFeaturesSection />
       <WhyItWorksSection />
       <TestimonialsSection />
       <EmailSignup />
-      <AboutSection />
+      <div id="about">
+        <AboutSection />
+      </div>
       <FAQSection />
       <FinalCTASection />
       <Footer />
