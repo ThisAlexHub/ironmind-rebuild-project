@@ -1,12 +1,17 @@
 
 import { useEffect } from 'react';
+import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
 import WhatIronMindIs from '@/components/WhatIronMindIs';
 import WhyNotTherapy from '@/components/WhyNotTherapy';
+import PremiumFeaturesSection from '@/components/PremiumFeaturesSection';
+import WhyItWorksSection from '@/components/WhyItWorksSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import EmailSignup from '@/components/EmailSignup';
 import AboutSection from '@/components/AboutSection';
 import FAQSection from '@/components/FAQSection';
+import FinalCTASection from '@/components/FinalCTASection';
+import Footer from '@/components/Footer';
 
 const Index = () => {
   useEffect(() => {
@@ -32,13 +37,18 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
+      <Header />
       <HeroSection />
       <WhatIronMindIs />
       <WhyNotTherapy />
+      <PremiumFeaturesSection />
+      <WhyItWorksSection />
       <TestimonialsSection />
       <EmailSignup />
       <AboutSection />
       <FAQSection />
+      <FinalCTASection />
+      <Footer />
     </div>
   );
 };
