@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -68,9 +67,10 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				iron: {
-					red: 'hsl(var(--iron-red))',
-					gray: 'hsl(var(--iron-gray))',
-					dark: 'hsl(var(--iron-dark))'
+					gold: 'hsl(var(--iron-gold))',
+					forest: 'hsl(var(--iron-forest))',
+					slate: 'hsl(var(--iron-slate))',
+					moss: 'hsl(var(--iron-moss))'
 				}
 			},
 			borderRadius: {
