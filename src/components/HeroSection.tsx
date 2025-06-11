@@ -1,21 +1,20 @@
 
 import { useState } from 'react';
-import { useToast } from '@/hooks/use-toast';
+import { useEmailSignup } from '@/hooks/useEmailSignup';
 import EmailCaptureModal from './EmailCaptureModal';
 
 const HeroSection = () => {
   const [email, setEmail] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const { toast } = useToast();
+  const { submitEmail, isLoading } = useEmailSignup();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (email) {
-      toast({
-        title: "Welcome to the rebuild.",
-        description: "Check your email for early access instructions.",
-      });
-      setEmail('');
+      const success = await submitEmail(email);
+      if (success) {
+        setEmail('');
+      }
     }
   };
 
@@ -74,12 +73,14 @@ const HeroSection = () => {
                   placeholder="Enter your email"
                   className="flex-1 px-6 py-4 bg-gray-900/50 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-red-500 transition-colors"
                   required
+                  disabled={isLoading}
                 />
                 <button
                   type="submit"
-                  className="bg-gray-800 hover:bg-gray-700 text-white font-bold py-4 px-6 rounded-lg transition-colors font-oswald"
+                  disabled={isLoading}
+                  className="bg-gray-800 hover:bg-gray-700 text-white font-bold py-4 px-6 rounded-lg transition-colors font-oswald disabled:opacity-50"
                 >
-                  Start Free Trial
+                  {isLoading ? 'Signing Up...' : 'Start Free Trial'}
                 </button>
               </form>
             </div>

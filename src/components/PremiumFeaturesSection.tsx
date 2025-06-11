@@ -1,4 +1,3 @@
-
 import { useEffect, useRef, useState } from 'react';
 import { Shield, Clock, MessageCircle, Download, Target, Lock, Zap } from 'lucide-react';
 import EmailCaptureModal from './EmailCaptureModal';

@@ -1,20 +1,19 @@
 
 import { useState } from 'react';
-import { useToast } from '@/hooks/use-toast';
+import { useEmailSignup } from '@/hooks/useEmailSignup';
 import { Youtube, X } from 'lucide-react';
 
 const EmailSignup = () => {
   const [email, setEmail] = useState('');
-  const { toast } = useToast();
+  const { submitEmail, isLoading } = useEmailSignup();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (email) {
-      toast({
-        title: "You're in.",
-        description: "Prepare for the rebuild. Check your email.",
-      });
-      setEmail('');
+      const success = await submitEmail(email);
+      if (success) {
+        setEmail('');
+      }
     }
   };
 
@@ -39,12 +38,14 @@ const EmailSignup = () => {
               placeholder="Enter your email"
               className="flex-1 px-6 py-4 bg-white text-black rounded-lg focus:outline-none focus:ring-2 focus:ring-white"
               required
+              disabled={isLoading}
             />
             <button
               type="submit"
-              className="bg-black hover:bg-gray-800 text-white font-bold py-4 px-8 rounded-lg transition-colors font-oswald text-lg"
+              disabled={isLoading}
+              className="bg-black hover:bg-gray-800 text-white font-bold py-4 px-8 rounded-lg transition-colors font-oswald text-lg disabled:opacity-50"
             >
-              ⚔️ Sign Up
+              {isLoading ? 'Signing Up...' : '⚔️ Sign Up'}
             </button>
           </form>
           

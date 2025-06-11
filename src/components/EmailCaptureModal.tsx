@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
 import { X } from 'lucide-react';
-import { useToast } from '@/hooks/use-toast';
+import { useEmailSignup } from '@/hooks/useEmailSignup';
 
 interface EmailCaptureModalProps {
   isOpen: boolean;
@@ -10,17 +10,16 @@ interface EmailCaptureModalProps {
 
 const EmailCaptureModal = ({ isOpen, onClose }: EmailCaptureModalProps) => {
   const [email, setEmail] = useState('');
-  const { toast } = useToast();
+  const { submitEmail, isLoading } = useEmailSignup();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (email) {
-      toast({
-        title: "You're in the early access list!",
-        description: "Watch for launch details at 50% off.",
-      });
-      setEmail('');
-      onClose();
+      const success = await submitEmail(email);
+      if (success) {
+        setEmail('');
+        onClose();
+      }
     }
   };
 
@@ -32,6 +31,7 @@ const EmailCaptureModal = ({ isOpen, onClose }: EmailCaptureModalProps) => {
         <button
           onClick={onClose}
           className="absolute top-4 right-4 text-gray-400 hover:text-white"
+          disabled={isLoading}
         >
           <X className="w-6 h-6" />
         </button>
@@ -57,12 +57,14 @@ const EmailCaptureModal = ({ isOpen, onClose }: EmailCaptureModalProps) => {
             placeholder="Enter your email"
             className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-red-500 transition-colors"
             required
+            disabled={isLoading}
           />
           <button
             type="submit"
-            className="w-full iron-button rounded-lg font-oswald text-lg"
+            disabled={isLoading}
+            className="w-full iron-button rounded-lg font-oswald text-lg disabled:opacity-50"
           >
-            ⚔️ Claim 50% Off Early Access
+            {isLoading ? 'Claiming Access...' : '⚔️ Claim 50% Off Early Access'}
           </button>
         </form>
       </div>
