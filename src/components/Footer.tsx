@@ -3,16 +3,9 @@ import { Youtube, X } from 'lucide-react';
 
 const Footer = () => {
   const socialLinks = [
-    { icon: X, url: 'https://twitter.com/ironmind', label: 'X (Twitter)' },
-    { icon: Youtube, url: 'https://youtube.com/@ironmind', label: 'YouTube' },
+    { icon: X, url: '#', label: 'X (Twitter)' },
+    { icon: Youtube, url: '#', label: 'YouTube' },
   ];
-
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
     <footer className="bg-black border-t border-gray-800 py-12">
@@ -30,53 +23,17 @@ const Footer = () => {
           <div>
             <h4 className="font-oswald text-lg font-bold text-white mb-4">About</h4>
             <ul className="space-y-2 text-gray-400 font-inter">
-              <li>
-                <button 
-                  onClick={() => scrollToSection('how-it-works')} 
-                  className="hover:text-red-400 transition-colors text-left"
-                >
-                  How It Works
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={() => scrollToSection('about')} 
-                  className="hover:text-red-400 transition-colors text-left"
-                >
-                  Our Story
-                </button>
-              </li>
-              <li>
-                <a href="mailto:contact@ironmind.com" className="hover:text-red-400 transition-colors">
-                  Contact
-                </a>
-              </li>
+              <li><a href="#" className="hover:text-red-400 transition-colors">How It Works</a></li>
+              <li><a href="#" className="hover:text-red-400 transition-colors">Our Story</a></li>
+              <li><a href="#" className="hover:text-red-400 transition-colors">Contact</a></li>
             </ul>
           </div>
           
           <div>
             <h4 className="font-oswald text-lg font-bold text-white mb-4">Legal</h4>
             <ul className="space-y-2 text-gray-400 font-inter">
-              <li>
-                <a 
-                  href="/terms" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="hover:text-red-400 transition-colors"
-                >
-                  Terms of Service
-                </a>
-              </li>
-              <li>
-                <a 
-                  href="/privacy" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="hover:text-red-400 transition-colors"
-                >
-                  Privacy Policy
-                </a>
-              </li>
+              <li><a href="#" className="hover:text-red-400 transition-colors">Terms of Service</a></li>
+              <li><a href="#" className="hover:text-red-400 transition-colors">Privacy Policy</a></li>
             </ul>
           </div>
           

@@ -22,26 +22,10 @@ const HeroSection = () => {
   return (
     <>
       <section className="hero-gradient min-h-screen flex items-center justify-center relative overflow-hidden pt-16">
-        {/* Animated background image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20 animate-slow-zoom"
-          style={{
-            backgroundImage: 'url("https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&auto=format&fit=crop&w=2074&q=80")',
-          }}
-        ></div>
-        
-        {/* Animated overlay particles */}
-        <div className="absolute inset-0">
-          <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-red-500/30 rounded-full animate-float-slow"></div>
-          <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-gray-400/40 rounded-full animate-float-medium"></div>
-          <div className="absolute bottom-1/3 left-1/2 w-3 h-3 bg-red-600/20 rounded-full animate-float-fast"></div>
-          <div className="absolute top-2/3 right-1/4 w-1.5 h-1.5 bg-gray-500/30 rounded-full animate-float-slow"></div>
-        </div>
-        
         {/* Background geometric pattern */}
         <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-1/4 left-1/4 w-64 h-64 border border-red-600 rotate-45 animate-spin-slow"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-48 h-48 border border-gray-600 rotate-12 animate-pulse-slow"></div>
+          <div className="absolute top-1/4 left-1/4 w-64 h-64 border border-red-600 rotate-45"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-48 h-48 border border-gray-600 rotate-12"></div>
         </div>
         
         <div className="container mx-auto px-4 text-center relative z-10">
@@ -59,7 +43,7 @@ const HeroSection = () => {
             
             {/* Early Access CTA */}
             <div className="pt-6 space-y-4 section-fade-in" style={{animationDelay: '0.3s'}}>
-              <div className="bg-red-600/20 border border-red-600/30 rounded-lg p-6 max-w-md mx-auto backdrop-blur-sm">
+              <div className="bg-red-600/20 border border-red-600/30 rounded-lg p-6 max-w-md mx-auto">
                 <div className="text-red-400 font-bold text-lg mb-2">
                   50% OFF Launch Special
                 </div>
@@ -88,7 +72,7 @@ const HeroSection = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email"
-                  className="flex-1 px-6 py-4 bg-gray-900/50 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-red-500 transition-colors backdrop-blur-sm"
+                  className="flex-1 px-6 py-4 bg-gray-900/50 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-red-500 transition-colors"
                   required
                 />
                 <button
