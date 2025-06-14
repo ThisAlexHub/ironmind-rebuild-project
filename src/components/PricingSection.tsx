@@ -11,7 +11,7 @@ const features = [
 
 const PricingSection = () => {
     return (
-        <section className="py-24 bg-gradient-to-b from-brand-silver/20 to-white">
+        <section id="pricing" className="py-24 bg-gradient-to-b from-brand-silver/20 to-white">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-16">
                     <h2 className="font-oswald text-4xl md:text-5xl font-bold text-brand-charcoal mb-4">

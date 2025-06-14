@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer className="bg-brand-charcoal text-white">
       <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="col-span-1 md:col-span-2">
             <h3 className="font-oswald text-2xl font-bold mb-4">IRONMIND</h3>
             <p className="text-brand-silver font-ibm mb-6 max-w-md">
@@ -39,33 +39,20 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="font-oswald text-lg font-bold mb-4">TRAINING</h4>
-            <ul className="space-y-2">
-              <li>
-                <a href="#" className="text-brand-silver hover:text-brand-bronze transition-colors font-ibm">
-                  Mental Forge
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-brand-silver hover:text-brand-bronze transition-colors font-ibm">
-                  Physical Training
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-brand-silver hover:text-brand-bronze transition-colors font-ibm">
-                  Recovery Protocol
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <div>
             <h4 className="font-oswald text-lg font-bold mb-4">COMPANY</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-brand-silver hover:text-brand-bronze transition-colors font-ibm">
+                <button
+                  onClick={() => {
+                    const element = document.getElementById('what-is-ironmind');
+                    if (element) {
+                      element.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
+                  className="text-brand-silver hover:text-brand-bronze transition-colors"
+                >
                   About
-                </a>
+                </button>
               </li>
               <li>
                 <a href="#" className="text-brand-silver hover:text-brand-bronze transition-colors font-ibm">
@@ -73,9 +60,17 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="#" className="text-brand-silver hover:text-brand-bronze transition-colors font-ibm">
+                <button
+                  onClick={() => {
+                    const element = document.getElementById('early-access');
+                    if (element) {
+                      element.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
+                  className="text-brand-silver hover:text-brand-bronze transition-colors"
+                >
                   Contact
-                </a>
+                </button>
               </li>
             </ul>
           </div>

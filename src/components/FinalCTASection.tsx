@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from 'react';
 import EmailCaptureModal from './EmailCaptureModal';
 
@@ -32,13 +31,14 @@ const FinalCTASection = () => {
             <h2 className="font-oswald text-4xl md:text-6xl font-bold text-white leading-tight">
               Ready to stop surviving and start <span className="text-red-500">rebuilding</span>?
             </h2>
-            
+
             <div className="text-xl text-gray-300 font-inter">
               The storm hit. Now it's time to build something stronger from the wreckage.
             </div>
-            
+
             <div className="pt-6">
               <button
+                id="final-cta-pricing-btn"
                 onClick={() => setIsModalOpen(true)}
                 className="iron-button rounded-lg font-oswald text-xl px-10 py-5 mb-4"
               >
@@ -51,7 +51,7 @@ const FinalCTASection = () => {
           </div>
         </div>
       </section>
-      
+
       <EmailCaptureModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </>
   );

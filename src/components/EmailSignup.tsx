@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { useEmailSignup } from '@/hooks/useEmailSignup';
 import { Youtube, X } from 'lucide-react';
@@ -23,13 +22,13 @@ const EmailSignup = () => {
   ];
 
   return (
-    <section className="py-16 bg-red-600">
+    <section id="early-access" className="py-16 bg-red-600">
       <div className="container mx-auto px-4">
         <div className="text-center">
           <h2 className="font-oswald text-3xl md:text-5xl font-bold text-white mb-4">
             Get early access. Rebuild your mind before she even thinks about texting back.
           </h2>
-          
+
           <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto mb-8">
             <input
               type="email"
@@ -48,20 +47,22 @@ const EmailSignup = () => {
               {isLoading ? 'Signing Up...' : '⚔️ Sign Up'}
             </button>
           </form>
-          
-          <div className="flex justify-center space-x-6">
-            {socialLinks.map((link, index) => (
-              <a
-                key={index}
-                href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-12 h-12 bg-white/10 hover:bg-white/20 rounded-lg flex items-center justify-center transition-colors group"
-                aria-label={link.label}
-              >
-                <link.icon className="w-6 h-6 text-white group-hover:scale-110 transition-transform" />
-              </a>
-            ))}
+
+          <div className="block w-full mt-24">
+            <div className="flex justify-center space-x-6">
+              {socialLinks.map((link, index) => (
+                <a
+                  key={index}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 bg-white/10 hover:bg-white/20 rounded-lg flex items-center justify-center transition-colors group"
+                  aria-label={link.label}
+                >
+                  <link.icon className="w-6 h-6 text-white group-hover:scale-110 transition-transform" />
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </div>
