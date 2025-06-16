@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { X } from 'lucide-react';
 import { useEmailSignup } from '@/hooks/useEmailSignup';
@@ -35,7 +34,7 @@ const EmailCaptureModal = ({ isOpen, onClose }: EmailCaptureModalProps) => {
         >
           <X className="w-6 h-6" />
         </button>
-        
+
         <div className="text-center mb-6">
           <h3 className="font-oswald text-2xl font-bold text-white mb-2">
             Get Early Access
@@ -45,10 +44,10 @@ const EmailCaptureModal = ({ isOpen, onClose }: EmailCaptureModalProps) => {
           </div>
           <div className="text-gray-400 line-through">Normally $9.99</div>
           <p className="text-gray-300 mt-4 font-inter">
-            Be the first to use it. Limited time only.
+            Our service is in the final stage of development and will be launched soon. Leave your email to keep your 50% discount and activate it after the launch.
           </p>
         </div>
-        
+
         <form onSubmit={handleSubmit} className="space-y-4">
           <input
             type="email"

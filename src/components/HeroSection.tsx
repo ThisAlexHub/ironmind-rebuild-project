@@ -58,30 +58,9 @@ const HeroSection = () => {
                   ⚔️ Get Early Access at 50% Off
                 </button>
                 <p className="text-gray-400 text-sm mt-2">
-                  Our service is in the final stage of development and will be launched soon. Leave your email to keep your 50% discount and activate it after the launch.
+                  Be the first to use it. Limited time only.
                 </p>
               </div>
-            </div>
-
-            <div className="pt-4 section-fade-in" style={{ animationDelay: '0.4s' }}>
-              <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your email"
-                  className="flex-1 px-6 py-4 bg-gray-900/50 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-red-500 transition-colors"
-                  required
-                  disabled={isLoading}
-                />
-                <button
-                  type="submit"
-                  disabled={isLoading}
-                  className="bg-gray-800 hover:bg-gray-700 text-white font-bold py-4 px-6 rounded-lg transition-colors font-oswald disabled:opacity-50"
-                >
-                  {isLoading ? 'Signing Up...' : 'Start Free Trial'}
-                </button>
-              </form>
             </div>
           </div>
         </div>

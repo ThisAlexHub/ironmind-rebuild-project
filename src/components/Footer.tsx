@@ -10,32 +10,7 @@ const Footer = () => {
             <p className="text-brand-silver font-ibm mb-6 max-w-md">
               Your forge for mental and physical transformation. Turn pain into power.
             </p>
-            <div className="flex gap-4">
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-brand-silver hover:text-brand-bronze transition-colors"
-              >
-                <Twitter className="w-5 h-5" />
-              </a>
-              <a
-                href="https://youtube.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-brand-silver hover:text-brand-bronze transition-colors"
-              >
-                <Youtube className="w-5 h-5" />
-              </a>
-              <a
-                href="https://github.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-brand-silver hover:text-brand-bronze transition-colors"
-              >
-                <Github className="w-5 h-5" />
-              </a>
-            </div>
+            {/* Social links removed as requested */}
           </div>
 
           <div>
@@ -55,7 +30,7 @@ const Footer = () => {
                 </button>
               </li>
               <li>
-                <a href="#" className="text-brand-silver hover:text-brand-bronze transition-colors font-ibm">
+                <a href="https://www.instagram.com/ironmindio/" target="_blank" rel="noopener noreferrer" className="text-brand-silver hover:text-brand-bronze transition-colors font-ibm">
                   Blog
                 </a>
               </li>

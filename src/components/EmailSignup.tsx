@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useEmailSignup } from '@/hooks/useEmailSignup';
-import { Youtube, X } from 'lucide-react';
+import { Instagram } from 'lucide-react';
 
 const EmailSignup = () => {
   const [email, setEmail] = useState('');
@@ -17,8 +17,7 @@ const EmailSignup = () => {
   };
 
   const socialLinks = [
-    { icon: X, url: '#', label: 'X (Twitter)' },
-    { icon: Youtube, url: '#', label: 'YouTube' },
+    { icon: Instagram, url: 'https://www.instagram.com/ironmindio/', label: 'Instagram' },
   ];
 
   return (
