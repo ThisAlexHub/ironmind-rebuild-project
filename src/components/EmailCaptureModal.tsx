@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { X } from 'lucide-react';
 import { useEmailSignup } from '@/hooks/useEmailSignup';
+import { useTranslation } from 'react-i18next';
 
 interface EmailCaptureModalProps {
   isOpen: boolean;
@@ -10,6 +11,7 @@ interface EmailCaptureModalProps {
 const EmailCaptureModal = ({ isOpen, onClose }: EmailCaptureModalProps) => {
   const [email, setEmail] = useState('');
   const { submitEmail, isLoading } = useEmailSignup();
+  const { t } = useTranslation();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -37,14 +39,14 @@ const EmailCaptureModal = ({ isOpen, onClose }: EmailCaptureModalProps) => {
 
         <div className="text-center mb-6">
           <h3 className="font-oswald text-2xl font-bold text-white mb-2">
-            Get Early Access
+            {t('emailModal.title')}
           </h3>
           <div className="text-red-400 font-bold text-lg mb-2">
-            50% OFF — Just $4.99/month
+            {t('emailModal.discount')}
           </div>
-          <div className="text-gray-400 line-through">Normally $9.99</div>
+          <div className="text-gray-400 line-through">{t('emailModal.oldPrice')}</div>
           <p className="text-gray-300 mt-4 font-inter">
-            Our service is in the final stage of development and will be launched soon. Leave your email to keep your 50% discount and activate it after the launch.
+            {t('emailModal.description')}
           </p>
         </div>
 
@@ -53,7 +55,7 @@ const EmailCaptureModal = ({ isOpen, onClose }: EmailCaptureModalProps) => {
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="Enter your email"
+            placeholder={t('emailModal.placeholder')}
             className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-red-500 transition-colors"
             required
             disabled={isLoading}
@@ -63,7 +65,7 @@ const EmailCaptureModal = ({ isOpen, onClose }: EmailCaptureModalProps) => {
             disabled={isLoading}
             className="w-full iron-button rounded-lg font-oswald text-lg disabled:opacity-50"
           >
-            {isLoading ? 'Claiming Access...' : '⚔️ Claim 50% Off Early Access'}
+            {isLoading ? t('emailModal.loading') : t('emailModal.button')}
           </button>
         </form>
       </div>

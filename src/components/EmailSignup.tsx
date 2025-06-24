@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { useEmailSignup } from '@/hooks/useEmailSignup';
 import { Instagram } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const EmailSignup = () => {
   const [email, setEmail] = useState('');
   const { submitEmail, isLoading } = useEmailSignup();
+  const { t } = useTranslation();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -25,7 +27,7 @@ const EmailSignup = () => {
       <div className="container mx-auto px-4">
         <div className="text-center">
           <h2 className="font-oswald text-3xl md:text-5xl font-bold text-white mb-4">
-            Get early access. Rebuild your mind before she even thinks about texting back.
+            {t('emailSignup.cta')}
           </h2>
 
           <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto mb-8">

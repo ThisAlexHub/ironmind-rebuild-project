@@ -1,6 +1,9 @@
 import { Github, Shield, Target, Twitter, Youtube, Zap } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
+  const { t } = useTranslation();
+
   return (
     <footer className="bg-brand-charcoal text-white">
       <div className="container mx-auto px-4 py-12">
@@ -8,13 +11,13 @@ const Footer = () => {
           <div className="col-span-1 md:col-span-2">
             <h3 className="font-oswald text-2xl font-bold mb-4">IRONMIND</h3>
             <p className="text-brand-silver font-ibm mb-6 max-w-md">
-              Your forge for mental and physical transformation. Turn pain into power.
+              {t('footer.tagline')}
             </p>
             {/* Social links removed as requested */}
           </div>
 
           <div>
-            <h4 className="font-oswald text-lg font-bold mb-4">COMPANY</h4>
+            <h4 className="font-oswald text-lg font-bold mb-4">{t('footer.company')}</h4>
             <ul className="space-y-2">
               <li>
                 <button
@@ -26,12 +29,12 @@ const Footer = () => {
                   }}
                   className="text-brand-silver hover:text-brand-bronze transition-colors"
                 >
-                  About
+                  {t('footer.about')}
                 </button>
               </li>
               <li>
                 <a href="https://www.instagram.com/ironmindio/" target="_blank" rel="noopener noreferrer" className="text-brand-silver hover:text-brand-bronze transition-colors font-ibm">
-                  Blog
+                  {t('footer.blog')}
                 </a>
               </li>
               <li>
@@ -44,7 +47,7 @@ const Footer = () => {
                   }}
                   className="text-brand-silver hover:text-brand-bronze transition-colors"
                 >
-                  Contact
+                  {t('footer.contact')}
                 </button>
               </li>
             </ul>
@@ -58,10 +61,10 @@ const Footer = () => {
             </p>
             <div className="flex gap-6">
               <a href="#" className="text-brand-silver hover:text-brand-bronze transition-colors text-sm font-ibm">
-                Privacy Policy
+                {t('footer.privacy')}
               </a>
               <a href="#" className="text-brand-silver hover:text-brand-bronze transition-colors text-sm font-ibm">
-                Terms of Service
+                {t('footer.terms')}
               </a>
             </div>
           </div>

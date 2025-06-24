@@ -1,14 +1,16 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { t, i18n } = useTranslation();
+  const [language, setLanguage] = useState(i18n.language || 'en');
 
   const navigation = [
-    { name: 'How It Works', href: '#how-it-works' },
-    { name: 'Features', href: '#features' },
-    { name: 'Pricing', href: '#early-access' },
-    { name: 'Get Early Access', href: '#early-access' },
+    { name: t('header.features', 'Features'), href: '#features' },
+    { name: t('header.pricing', 'Pricing'), href: '#early-access' },
+    { name: t('header.getEarlyAccess', 'Get Early Access'), href: '#early-access' },
   ];
 
   const handleNavigation = (href: string) => {
@@ -46,6 +48,18 @@ const Header = () => {
                 {item.name}
               </button>
             ))}
+            <select
+              value={language}
+              onChange={e => {
+                setLanguage(e.target.value);
+                i18n.changeLanguage(e.target.value);
+              }}
+              className="ml-6 px-3 py-1 rounded bg-gray-800 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500"
+              aria-label="Select language"
+            >
+              <option value="en">English</option>
+              <option value="ru">Русский</option>
+            </select>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -69,6 +83,18 @@ const Header = () => {
                 {item.name}
               </button>
             ))}
+            <select
+              value={language}
+              onChange={e => {
+                setLanguage(e.target.value);
+                i18n.changeLanguage(e.target.value);
+              }}
+              className="mt-4 w-full px-3 py-2 rounded bg-gray-800 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500"
+              aria-label="Select language"
+            >
+              <option value="en">English</option>
+              <option value="ru">Русский</option>
+            </select>
           </nav>
         )}
       </div>

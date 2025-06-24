@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 import { Brain, Target, Shield, Zap } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const WhatIronMindIs = () => {
+  const { t } = useTranslation();
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -25,40 +27,36 @@ const WhatIronMindIs = () => {
   const pillars = [
     {
       icon: Brain,
-      title: "Reprogram your mind",
-      description: "Delete weak patterns. Install discipline.",
-      delay: "0s"
+      title: t('whatIronMindIs.pillars.0.title'),
+      description: t('whatIronMindIs.pillars.0.description'),
+      delay: '0s',
     },
     {
       icon: Target,
-      title: "Redirect pain into progress",
-      description: "Every hurt becomes fuel. Every setback becomes setup.",
-      delay: "0.2s"
+      title: t('whatIronMindIs.pillars.1.title'),
+      description: t('whatIronMindIs.pillars.1.description'),
+      delay: '0.2s',
     },
     {
       icon: Shield,
-      title: "Discipline over emotion",
-      description: "Feel nothing. Build everything. Control the narrative.",
-      delay: "0.4s"
+      title: t('whatIronMindIs.pillars.2.title'),
+      description: t('whatIronMindIs.pillars.2.description'),
+      delay: '0.4s',
     },
     {
       icon: Zap,
-      title: "Always-on, always private",
-      description: "24/7 access. Zero judgment. Maximum impact.",
-      delay: "0.6s"
-    }
+      title: t('whatIronMindIs.pillars.3.title'),
+      description: t('whatIronMindIs.pillars.3.description'),
+      delay: '0.6s',
+    },
   ];
 
   return (
     <section ref={sectionRef} id="what-is-ironmind" className="py-20 bg-gradient-to-b from-gray-900 to-black">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className={`font-oswald text-4xl md:text-6xl font-bold text-white mb-6 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
-            What IronMind Is
-          </h2>
-          <p className={`text-xl text-gray-300 max-w-3xl mx-auto font-inter ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.2s' }}>
-            This isn't for venting. This is for evolving. IronMind's AI coach gives you fire-tested clarity — not hugs, not pity, not filler.
-          </p>
+          <h2 className={`font-oswald text-4xl md:text-6xl font-bold text-white mb-6 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>{t('whatIronMindIs.title')}</h2>
+          <p className={`text-xl text-gray-300 max-w-3xl mx-auto font-inter ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} style={{ animationDelay: '0.2s' }}>{t('whatIronMindIs.subtitle')}</p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
